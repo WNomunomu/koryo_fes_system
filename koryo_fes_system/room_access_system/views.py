@@ -7,8 +7,13 @@ from .models import roomAccessData
 
 # Create your views here.
 class PostFormView(FormView):
-    def get(self, request, room_name):
-        form = PostForm(request.GET or None, initial={'room_name': room_name})
+    def get(self, request, room_name, enter_or_leave):
+        if enter_or_leave == 'enter':
+            parameter = 1
+        elif enter_or_leave == 'leave':
+            parameter = -1
+
+        form = PostForm(request.GET or None, initial={'room_name': room_name, 'entered_or_left': parameter})
 
         return render(request, 'room_access_system/enter.html', dict(form=form))
     

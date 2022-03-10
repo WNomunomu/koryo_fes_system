@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('enter/<slug:room_name>', views.PostFormView.as_view(), name="enter"),
+    path('room_access/<slug:room_name>/<slug:enter_or_leave>', views.PostFormView.as_view(), name="room_access"),
 ]
