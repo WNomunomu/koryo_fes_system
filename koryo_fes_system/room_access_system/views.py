@@ -1,12 +1,16 @@
 from audioop import reverse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from django.views.generic import FormView
+from django.views.generic import FormView, TemplateView
 
 from .forms import PostForm
 from .models import roomAccessData
 
 # Create your views here.
+class HomeView(TemplateView):
+    template_name = 'room_access_system/home.html'
+
+
 class PostFormView(FormView):
     def get(self, request, room_name, enter_or_leave):
         if enter_or_leave == 'enter':
@@ -16,7 +20,7 @@ class PostFormView(FormView):
 
         form = PostForm(request.GET or None, initial={'room_name': room_name, 'entered_or_left': parameter})
 
-        return render(request, 'room_access_system/enter.html', dict(form=form))
+        return render(request, 'room_access_system/room_access.html', dict(form=form))
 
     form_class = PostForm
 
