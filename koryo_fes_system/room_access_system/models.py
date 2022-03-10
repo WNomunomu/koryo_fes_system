@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class roomAccessData(models.Model):
@@ -21,8 +22,7 @@ class roomAccessData(models.Model):
         )
 
     entered_or_left_time = models.DateTimeField(
-        auto_now=True,
-        editable=False,
+        default=timezone.now,
         blank=False,
         null=False,
     )
