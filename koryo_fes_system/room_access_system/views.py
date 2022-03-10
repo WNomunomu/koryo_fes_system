@@ -7,9 +7,10 @@ from .models import roomAccessData
 
 # Create your views here.
 class PostFormView(FormView):
-    template_name = 'room_access_system/1-1enter.html'
-    form_class = PostForm
-    success_url = reverse_lazy('1-1')
+    def get(self, request, room_name):
+        form = PostForm(request.GET or None, initial={'room_name': room_name})
+
+        return render(request, 'room_access_system/enter.html', dict(form=form))
     
     def form_valid(self, form):
         room_name = form.cleaned_data['room_name']
