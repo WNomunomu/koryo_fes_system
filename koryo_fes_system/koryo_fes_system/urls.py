@@ -16,6 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
+from django.contrib.auth.models import Group
+
+
+admin.site.site_title = '蛟龍祭入場管理システム'
+admin.site.site_header = '蛟龍祭入場管理システム'
+admin.site.index_title = 'メニュー'
+admin.site.unregister(Group)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
