@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name="home"),
-    path('room_access/<slug:room_name>/<slug:enter_or_leave>', views.PostFormView.as_view(), name="room_access"),
+    path('room_access/<slug:room_name>/<slug:enter_or_leave>', views.RoomAccessView.as_view(), name="room_access"),
+    path('ajax_post', views.ajax_response, name='ajax_post'),
 ]
