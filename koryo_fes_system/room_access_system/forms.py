@@ -1,9 +1,9 @@
 from dataclasses import field
 from django import forms
 
-from .models import roomAccessData
+from .models import RoomAccessData
 
 class PostForm(forms.ModelForm):
     class Meta:
-        model = roomAccessData
+        model = RoomAccessData
         fields = ('room_name', 'user_num', 'entered_or_left')
