@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import FormView, TemplateView, View
 
 from .forms import PostForm
-from .models import roomAccessData
+from .models import RoomAccessData
 
 # Create your views here.
 class HomeView(TemplateView):
@@ -36,7 +36,7 @@ class PostFormView(FormView):
         user_num = form.cleaned_data['user_num']
         entered_or_left = form.cleaned_data['entered_or_left']
 
-        roomAccessData.objects.create(
+        RoomAccessData.objects.create(
             room_name = room_name,
             user_num = user_num,
             entered_or_left = entered_or_left,
@@ -52,7 +52,7 @@ def ajax_response(request):
         user_num = int(request.POST.get('user_num'))
         entered_or_left = request.POST.get('entered_or_left')
 
-        roomAccessData.objects.create(
+        RoomAccessData.objects.create(
             room_name = room_name,
             user_num = user_num,
             entered_or_left = entered_or_left,

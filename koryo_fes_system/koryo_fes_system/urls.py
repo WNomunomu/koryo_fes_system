@@ -19,8 +19,8 @@ from django.views.generic import RedirectView
 from django.contrib.auth.models import Group
 
 
-admin.site.site_title = '蛟龍祭入場管理システム'
-admin.site.site_header = '蛟龍祭入場管理システム'
+admin.site.site_title = '蛟龍祭入場管理システム Marronnier'
+admin.site.site_header = '蛟龍祭入場管理システム Marronnier'
 admin.site.index_title = 'メニュー'
 admin.site.unregister(Group)
 
