@@ -1,0 +1,52 @@
+#header {
+    background: #B08968;
+    color: white;
+}
+
+#site-name {
+    font-family: cursive;
+}
+
+div.breadcrumbs a:focus, div.breadcrumbs a:hover {
+    color: #EDE0D4;
+}
+
+#user-tools a:focus, #user-tools a:hover {
+    color: #EDE0D4;
+    border-bottom-color: #EDE0D4;
+}
+
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    color: white;
+}
+
+div.breadcrumbs {
+    background-color: #DDB892;
+    color: white;
+}
+
+#nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited {
+    color: white;
+}
+
+#nav-sidebar .current-model {
+    background-color: white;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background-color: #DDB892;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    color: white;
+    background-color: #DDB892;
+}
+
+.button:active, input[type=submit]:active, input[type=button]:active, .button:focus, input[type=submit]:focus, input[type=button]:focus, .button:hover, input[type=submit]:hover, input[type=button]:hover {
+    background-color: #B08968;
+}
+
+.login.vsc-initialized {
+    background-image: url("https://image.jimcdn.com/app/cms/image/transf/dimension=origxorig:format=jpg/path/s5ed9a7a9cee73c08/image/i60a86e6af0dc558c/version/1566633789/%E3%81%BE%E3%82%8D%E3%81%AB%E3%81%88%E3%81%AE%E6%9C%A8.jpg");
+    background-size: cover;
+}
