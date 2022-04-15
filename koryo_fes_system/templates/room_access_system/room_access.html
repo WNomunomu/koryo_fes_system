@@ -23,8 +23,10 @@
                 {{ form.room_name.as_hidden }}
                 {{ form.entered_or_left.as_hidden }}
                 {{ form.user_num }}
+				<button type="submit" class="btn btn-primary mt-4">送信</button>
             </div>
         </form>
+		<input type="checkbox" name="quick" id="quick"></input>
     </div>
 
     <div id="result"></div>
@@ -62,10 +64,9 @@
         });
 
 		function send() {
-            var room_name_value = $('#id_room_name').val();
+			var room_name_value = $('#id_room_name').val();
             var user_num_value = $('#id_user_num').val();
             var entered_or_left_value = $('#id_entered_or_left').val();
-
             $.ajax({
                 'url': "{% url 'ajax_post' %}",
                 'type': 'POST',
@@ -77,7 +78,13 @@
                 'dataType': 'json',
             })
             $('#id_user_num').val(0);
-        };
+		}
+
+
+        $('#post-form').on('submit', function(e) {
+			e.preventDefault();
+			send();
+		});
 
 
         // qrコードの処理
@@ -101,6 +108,13 @@
 	        requestAnimationFrame(tick);
         });
 
+		//for test----------
+		let quick_flag = new Boolean(true)
+		$('input[name="check"]').change(function() {
+			quicK_flag = $("#quick").prop("checked");
+		})
+		//------------------
+
 		var prev_data = 0
         function tick() {
 	        if (video.readyState === video.HAVE_ENOUGH_DATA) {
@@ -119,8 +133,8 @@
 
                     console.log(code.data);
                     $('#id_user_num').val(code.data);
-					
-					if (code.data != prev_data) {
+
+					if ((code.data != prev_data) && quick_flag) {
 						send()
 					}
 
