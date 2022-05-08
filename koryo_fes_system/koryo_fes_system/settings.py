@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'room_access_system',
     "rest_framework",
-    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -88,21 +87,18 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': os.getenv('DB_HOST'),
-            'USER': os.getenv('DB_USER'),
-            'PASSWORD': os.getenv('DB_PASSWORD'),
-            'NAME': os.getenv('DB_NAME'),
+            'HOST': '/cloudsql/koryo-fes-system-test:us-central1:koryo-fes-system-database',
+            'USER': 'WNomunomu',
+            'PASSWORD': '',
+            'NAME': 'koryo-fes-system-test-db',
         }
     }
 
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/koryo-fes-system-test:us-central1:koryo-fes-system-database',
-            'USER': 'WNomunomu',
-            'PASSWORD': '',
-            'NAME': 'koryo-fes-system-test-db',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
 
