@@ -1,0 +1,22 @@
+runtime: python39
+
+# This is imports the WSGI-compatible object of your Django app
+entrypoint: gunicorn -b :$PORT koryo_fes_system.wsgi
+
+includes:
+- secret.yaml
+
+handlers:
+# This configures Google App Engine to serve the files in the app's static
+# directory.
+- url: /static
+  static_dir: staticfiles/
+
+# This handler routes all requests not caught above to your main app. It is
+# required when static routes are defined, but can be omitted (along with
+# the entire handlers section) when there are no static files defined.
+- url: /.*
+  script: auto
+  # SSLで常時接続させる場合はコメントアウトを外す
+  # secure: always
+
