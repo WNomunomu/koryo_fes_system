@@ -1,0 +1,12 @@
+{% extends 'account/base.html' %}
+
+{% block title %}トップ{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>蛟龍祭入場管理システムMarronnierへようこそ！</h1>
+    <h2>まずは下のログインボタンからログインをお願いします。</h2>
+
+    <a href="{% url 'account:login' %}" class="btn btn-outline-primary">ログイン</a>
+</div>
+{% endblock content %}

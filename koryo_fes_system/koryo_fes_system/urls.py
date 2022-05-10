@@ -29,5 +29,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('room_access_system.urls')),
     path('api/', include("number_of_people_api.urls")),
-    path('', RedirectView.as_view(url='/home/')),
+    # path('', RedirectView.as_view(url='/home/')),
+    path('', include('account.urls')),
 ]
