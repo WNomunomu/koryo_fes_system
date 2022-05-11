@@ -98,11 +98,8 @@ if os.getenv('GAE_APPLICATION', None):
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/koryo-fes-system-test:us-central1:koryo-fes-system-database',
-            'USER': 'WNomunomu',
-            'PASSWORD': '',
-            'NAME': 'koryo-fes-system-test-db',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
@@ -149,3 +146,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+LOGIN_URL = "account:login"
+LOGIN_REDIRECT_URL = "room_access_system:home"
+LOGOUT_REDIREST_URL = "account:login"
+ACCOUNT_LOGOUT_REDIRECT_URL = "account:login"

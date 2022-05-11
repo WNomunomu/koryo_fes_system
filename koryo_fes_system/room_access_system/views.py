@@ -3,12 +3,14 @@ from django.http import HttpResponse, QueryDict
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import FormView, TemplateView, View
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 from .forms import PostForm
 from .models import RoomAccessData
 
 # Create your views here.
-class HomeView(TemplateView):
+class HomeView(LoginRequiredMixin, TemplateView):
     template_name = 'room_access_system/home.html'
 
 # このviewは今は使っていないですが、一応残しておきます。by野村
@@ -46,6 +48,7 @@ class PostFormView(FormView):
 
 
 # ajaxの処理
+@login_required
 def ajax_response(request):
     if request.method == 'POST':
         room_name = request.POST.get('room_name')
@@ -61,7 +64,7 @@ def ajax_response(request):
         return HttpResponse('こんにちは')
 
 
-class RoomAccessView(View):
+class RoomAccessView(LoginRequiredMixin, View):
     def get(self, request, room_name, enter_or_leave):
         if enter_or_leave == 'enter':
             parameter = 1

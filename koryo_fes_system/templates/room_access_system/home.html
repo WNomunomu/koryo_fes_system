@@ -13,7 +13,7 @@
         <nav class="navbar navbar-dark bg-primary">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">蛟龍祭入場管理システム Marronnier</span>
-                <a href="{% url 'account:login' %}" style="color: white;">ログアウト</a>
+                <a href="{% url 'account:logout' %}" style="color: white;">ログアウト</a>
             </div>
         </nav>
     </header>
@@ -25,10 +25,10 @@
                         <h5>1-1</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-1" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-1" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-1" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-1" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -38,10 +38,10 @@
                         <h5>1-2</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-2" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-2" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-2" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-2" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -51,10 +51,10 @@
                         <h5>1-3</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-3" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-3" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-3" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-3" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -64,10 +64,10 @@
                         <h5>1-4</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-4" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-4" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-4" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-4" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -77,10 +77,10 @@
                         <h5>1-5</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-5" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-5" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-5" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-5" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -90,10 +90,10 @@
                         <h5>1-6</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-6" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-6" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-6" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-6" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -103,10 +103,10 @@
                         <h5>1-7</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-7" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-7" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "1-7" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "1-7" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -116,10 +116,10 @@
                         <h5>2-1</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "2-1" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "2-1" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "2-1" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "2-1" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -129,10 +129,10 @@
                         <h5>2-2</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "2-2" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "2-2" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "2-2" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "2-2" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>
@@ -142,10 +142,10 @@
                         <h5>2-3</h5>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "2-3" "enter" %}">入場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "2-3" "enter" %}">入場</a>
                             </div>
                             <div class="col">
-                                <a class="btn btn-primary" href="{% url "room_access" "2-3" "leave" %}">退場</a>
+                                <a class="btn btn-primary" href="{% url "room_access_system:room_access" "2-3" "leave" %}">退場</a>
                             </div>
                         </div>
                     </div>

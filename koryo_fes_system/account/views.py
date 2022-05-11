@@ -11,8 +11,8 @@ class TopPageView(TemplateView):
 # ログインページ
 class LiginView(LoginView):
     form_class = forms.LoginForm
-    template_name = "account/login.html"
+    template_name = "registration/login.html"
 
 # ログアウトページ
 class LogoutView(LoginRequiredMixin, LogoutView):
-    template_name = "account/login.html"
+    template_name = "registration/login.html"
