@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1-1enter</title>
+    <link rel="stylesheet" href="{% static 'room_access_system/css/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="{% static 'room_access_system/js/jsQR.js' %}"></script>
 </head>
+
 <body style="max-width: 640px;margin: 0 auto;">
-    <canvas id="canvas" style="width:100%"></canvas>
+
     <div id="output">
-      <div id="outputMessage">QRをかざしてね！</div>
+      <h1 id="outputMessage"></h1>
     </div>
+    <canvas id="canvas" style="width:100%"></canvas>
 
     <div class="container mt-4">
         <form action="" method="POST" id="post-form">
@@ -29,7 +32,7 @@
 		<input type="checkbox" name="quick" id="quick"></input>
     </div>
 
-    <div id="result"></div>
+    <p>このページの音声はOtoLogicの音声を使用しています。</p>
     <script>
         // システムのユーザーがページから離れようとしたときの処理
         window.onbeforeunload = function(e) {
@@ -88,6 +91,9 @@
 
         $('#post-form').on('submit', function(e) {
 			e.preventDefault();
+            
+            const entranceMusic = new Audio("{% static 'room_access_system/sound/entrance.mp3' %}");
+            const errorMusic = new Audio("{% static 'room_access_system/sound/error.mp3' %}");
 
             var user_num_value = $('#id_user_num').val();
 
@@ -108,11 +114,14 @@
 
             if (checkNum === x) {
                 console.log('正規のチケットです。');
+                entranceMusic.play();
+                send();
+                
             } else {
                 console.log('偽装の疑いあり。');
+                errorMusic.play();
             }
             
-			// send();
 		});
 
 
@@ -171,7 +180,7 @@
                     document.getElementById("outputMessage").innerText = "読み取り成功！";
                 } else {
 	                console.log("No QR code detected.");
-                    document.getElementById("outputMessage").innerText = "QRをかざしてね！";
+                    document.getElementById("outputMessage").innerText = "QRコードをかざしてください。";
                 }
 	        }
             requestAnimationFrame(tick);
