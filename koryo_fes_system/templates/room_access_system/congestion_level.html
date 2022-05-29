@@ -1,24 +1,1579 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>混雑状況ページ</title>
-    <link rel="stylesheet" href="{% static 'room_access_system/css/congestion_level_style.css' %}">
-</head>
-<body>
-    <div class="main-content">
-        <div class="first-floor">
-            <div class="room 1-1"><p>1-1</p></div>
-            <div class="room 1-2"><p>1-2</p></div>
-            <div class="room 1-3"><p>1-3</p></div>
-            <div class="room 1-4"><p>1-4</p></div>
-            <div class="room 1-5"><p>1-5</p></div>
-            <div class="room 1-6"><p>1-6</p></div>
-            <div class="room 1-7"><p>1-7</p></div>
-        </div>
-    </div>
-</body>
-</html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+    thead {
+        visibility: hidden;
+    }
+
+    .row-headers-background {
+        visibility: hidden;
+    }
+
+    #hidden-element {
+        visibility: hidden;
+    }
+
+    .ritz .waffle a {
+        color: inherit;
+    }
+
+    .ritz .waffle .s1 {
+        border-bottom: 1px SOLID #000000;
+        background-color: #ffffff;
+    }
+
+    .ritz .waffle .s4 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: left;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: bottom;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s5 {
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+    }
+
+    .ritz .waffle .s6 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s9 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 9pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s8 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 7pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s2 {
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: left;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: bottom;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s0 {
+        background-color: #ffffff;
+        text-align: left;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: bottom;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s3 {
+        border-bottom: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: left;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: bottom;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s7 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 6pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+</style>
+<div class="ritz grid-container" dir="ltr">
+    <table class="waffle" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th class="row-header freezebar-origin-ltr"></th>
+                <th id="410538746C0" style="width:20px;" class="column-headers-background">A</th>
+                <th id="410538746C1" style="width:20px;" class="column-headers-background">B</th>
+                <th id="410538746C2" style="width:20px;" class="column-headers-background">C</th>
+                <th id="410538746C3" style="width:20px;" class="column-headers-background">D</th>
+                <th id="410538746C4" style="width:20px;" class="column-headers-background">E</th>
+                <th id="410538746C5" style="width:20px;" class="column-headers-background">F</th>
+                <th id="410538746C6" style="width:20px;" class="column-headers-background">G</th>
+                <th id="410538746C7" style="width:20px;" class="column-headers-background">H</th>
+                <th id="410538746C8" style="width:20px;" class="column-headers-background">I</th>
+                <th id="410538746C9" style="width:20px;" class="column-headers-background">J</th>
+                <th id="410538746C10" style="width:20px;" class="column-headers-background">K</th>
+                <th id="410538746C11" style="width:20px;" class="column-headers-background">L</th>
+                <th id="410538746C12" style="width:20px;" class="column-headers-background">M</th>
+                <th id="410538746C13" style="width:20px;" class="column-headers-background">N</th>
+                <th id="410538746C14" style="width:20px;" class="column-headers-background">O</th>
+                <th id="410538746C15" style="width:20px;" class="column-headers-background">P</th>
+                <th id="410538746C16" style="width:20px;" class="column-headers-background">Q</th>
+                <th id="410538746C17" style="width:20px;" class="column-headers-background">R</th>
+                <th id="410538746C18" style="width:20px;" class="column-headers-background">S</th>
+                <th id="410538746C19" style="width:20px;" class="column-headers-background">T</th>
+                <th id="410538746C20" style="width:20px;" class="column-headers-background">U</th>
+                <th id="410538746C21" style="width:20px;" class="column-headers-background">V</th>
+                <th id="410538746C22" style="width:20px;" class="column-headers-background">W</th>
+                <th id="410538746C23" style="width:20px;" class="column-headers-background">X</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="height: 20px">
+                <th id="410538746R0" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">1</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R1" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">2</div>
+                </th>
+                <td></td>
+                <td class="s0" dir="ltr">1階</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="hidden-element" class="s0" dir="ltr">１</td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R2" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">3</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="s1"></td>
+                <td></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R3" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">4</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R4" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">5</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R5" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">6</div>
+                </th>
+                <td></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s4"></td>
+                <td class="s4"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R6" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">7</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R7" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">8</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td id="obara" class="s6" dir="ltr" colspan="5" rowspan="2">小原玲さん<br>写真展</td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R8" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">9</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R9" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">10</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R10" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">11</div>
+                </th>
+                <td></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R11" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">12</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R12" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">13</div>
+                </th>
+                <td class="s5"></td>
+                <td id="kuizukenkyuu" class="s7" dir="ltr" colspan="2" rowspan="2">クイズ研究<br>同好会</td>
+                <td id="1-7" class="s6" dir="ltr" colspan="2" rowspan="2">1-7</td>
+                <td id="1-6" class="s6" dir="ltr" colspan="2" rowspan="2">1-6</td>
+                <td class="s2"></td>
+                <td id="1-5" class="s6" dir="ltr" colspan="2" rowspan="2">1-5</td>
+                <td id="chireki-syashin-bungei" class="s8" dir="ltr" colspan="2" rowspan="2">地歴部<br>写真部<br>文芸部</td>
+                <td id="1-4" class="s6" dir="ltr" colspan="2" rowspan="2">1-4</td>
+                <td class="s2"></td>
+                <td id="1-3" class="s6" dir="ltr" colspan="2" rowspan="2">1-3</td>
+                <td id="1-2" class="s6" dir="ltr" colspan="2" rowspan="2">1-2</td>
+                <td id="1-1" class="s6" dir="ltr" colspan="2" rowspan="2">1-1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R13" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">14</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s4"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R14" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">15</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R15" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">16</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R16" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">17</div>
+                </th>
+                <td></td>
+                <td class="s0" dir="ltr" colspan="2">2階</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R17" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">18</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="s1"></td>
+                <td></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R18" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">19</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R19" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">20</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R20" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">21</div>
+                </th>
+                <td></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s4"></td>
+                <td class="s4"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R21" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">22</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R22" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">23</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R23" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">24</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R24" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">25</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R25" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">26</div>
+                </th>
+                <td></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R26" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">27</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R27" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">28</div>
+                </th>
+                <td class="s5"></td>
+                <td id="bijutsu-shodou" class="s9" dir="ltr" colspan="2" rowspan="2">美術部<br>書道部</td>
+                <td id="2-7" class="s6" dir="ltr" colspan="2" rowspan="2">2-7</td>
+                <td id="2-6" class="s6" dir="ltr" colspan="2" rowspan="2">2-6</td>
+                <td class="s2"></td>
+                <td id="2-5" class="s6" dir="ltr" colspan="2" rowspan="2">2-5</td>
+                <td id="tetsudou" class="s9" dir="ltr" colspan="2" rowspan="2">鉄道<br>研究部</td>
+                <td id="2-4" class="s6" dir="ltr" colspan="2" rowspan="2">2-4</td>
+                <td class="s2"></td>
+                <td id="2-3" class="s6" dir="ltr" colspan="2" rowspan="2">2-3</td>
+                <td id="2-2" class="s6" dir="ltr" colspan="2" rowspan="2">2-2</td>
+                <td id="2-1" class="s6" dir="ltr" colspan="2" rowspan="2">2-1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R28" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">29</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s4"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R29" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">30</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R30" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">31</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R31" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">32</div>
+                </th>
+                <td></td>
+                <td class="s0" dir="ltr" colspan="2">3階</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R32" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">33</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="s1"></td>
+                <td></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R33" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">34</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R34" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">35</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R35" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">36</div>
+                </th>
+                <td></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s4"></td>
+                <td class="s4"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R36" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">37</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R37" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">38</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R38" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">39</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R39" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">40</div>
+                </th>
+                <td></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s2"></td>
+                <td class="s2"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R40" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">41</div>
+                </th>
+                <td></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td class="s2"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R41" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">42</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s0"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R42" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">43</div>
+                </th>
+                <td class="s5"></td>
+                <td id="debate" class="s9" dir="ltr" colspan="2" rowspan="2">ディベ<br>ート部</td>
+                <td id="3-7" class="s6" dir="ltr" colspan="2" rowspan="2">3-7</td>
+                <td id="3-6" class="s6" dir="ltr" colspan="2" rowspan="2">3-6</td>
+                <td class="s2"></td>
+                <td id="3-5" class="s6" dir="ltr" colspan="2" rowspan="2">3-5</td>
+                <td id="science" class="s9" dir="ltr" colspan="2" rowspan="2">科学・<br>物理部</td>
+                <td id="3-4" class="s6" dir="ltr" colspan="2" rowspan="2">3-4</td>
+                <td class="s2"></td>
+                <td id="3-3" class="s6" dir="ltr" colspan="2" rowspan="2">3-3</td>
+                <td id="3-2" class="s6" dir="ltr" colspan="2" rowspan="2">3-2</td>
+                <td id="3-1" class="s6" dir="ltr" colspan="2" rowspan="2">3-1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R43" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">44</div>
+                </th>
+                <td class="s5"></td>
+                <td class="s4"></td>
+                <td class="s4"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R44" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">45</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R45" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">46</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R46" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">47</div>
+                </th>
+                <td></td>
+                <td class="s1"></td>
+                <td class="s3" dir="ltr"></td>
+                <td class="s3" dir="ltr"></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td class="s3" dir="ltr" colspan="3">蛟龍館</td>
+                <td class="s3"></td>
+                <td class="s3"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R47" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">48</div>
+                </th>
+                <td class="s5"></td>
+                <td id="kinenkan" class="s6" dir="ltr" colspan="4" rowspan="6">記念館</td>
+                <td></td>
+                <td class="s5"></td>
+                <td id="taiikukan" class="s6" dir="ltr" colspan="4" rowspan="6">体育館</td>
+                <td></td>
+                <td class="s5"></td>
+                <td id="live" class="s6" dir="ltr" colspan="4" rowspan="6">ライブ</td>
+                <td id="koryo-3f" class="s6" dir="ltr" colspan="4" rowspan="6">将棋部<br>茶道部<br>囲碁部<br>百人一首部</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R48" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">49</div>
+                </th>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R49" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">50</div>
+                </th>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R50" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">51</div>
+                </th>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R51" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">52</div>
+                </th>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R52" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">53</div>
+                </th>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td class="s5"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    const dataDict = {};
+    
+    {% for room_data in data %}
+    
+    dataDict["{{ room_data.room_name }}"] = "{{ room_data.number_of_people }}";
+
+    {% endfor %}
+
+    console.log(dataDict);
+
+    for (let key in dataDict) {
+        
+        if (key === 'koryo-3f') {
+            dataDict[key] = dataDict[key] / 60;
+        }
+        
+        else if (key === 'taiikukan') {
+            dataDict[key] = dataDict[key] / 600;
+        }
+
+        else if (key === 'kinenkan') {
+            dataDict[key] = dataDict[key] / 140;
+        }
+
+        else if (key === 'live') {
+            dataDict[key] = dataDict[key] / 70;
+        }
+
+        else {
+            dataDict[key] = dataDict[key] / 10;
+        }
+    }
+
+    // 色を塗る関数
+    const paintRoom = (room_name) => {
+        element = document.getElementById(room_name);
+        console.log(room_name);
+        console.log(dataDict[room_name]);
+
+        if (0 <= dataDict[room_name] && dataDict[room_name] < 0.33) {
+            element.style.backgroundColor = '#66FFFF';
+        }  
+    
+        else if (0.33 <= dataDict[room_name] && dataDict[room_name] < 0.66) {
+            element.style.backgroundColor = '#C3FB0D';
+        }
+        
+        else if (0.66 <= dataDict[room_name]) {
+            element.style.backgroundColor = '#F92C2C';
+        }
+    };
+    
+    for (let key in dataDict) {
+        paintRoom(key);
+    }
+</script>

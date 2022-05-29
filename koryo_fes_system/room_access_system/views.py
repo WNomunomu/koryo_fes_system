@@ -1,13 +1,13 @@
-from audioop import reverse
-from django.http import HttpResponse, QueryDict
-from django.shortcuts import redirect, render
+from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import FormView, TemplateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
 
 from .forms import PostForm
-from .models import RoomAccessData
+from .models import RoomAccessData, NumberOfPeopleData
 
 # Create your views here.
 class HomeView(LoginRequiredMixin, TemplateView):
@@ -74,3 +74,25 @@ class RoomAccessView(LoginRequiredMixin, View):
         form = PostForm(request.GET or None, initial={'room_name': room_name, 'entered_or_left': parameter})
 
         return render(request, 'room_access_system/room_access.html', dict(form=form))
+
+
+class CongestionLevelView(TemplateView):
+
+    template_name = 'room_access_system/congestion_level.html'
+
+    def get_context_data(self, **kwargs):
+
+        number_of_people_data = NumberOfPeopleData.objects.all()
+
+        context = super().get_context_data(**kwargs)
+        context['data'] = number_of_people_data
+
+        return context
+
+    # def get(self, request):
+
+    #     context = {
+    #         'data': number_of_people_data,
+    #     }
+
+    #     return render(request, 'room_access_system/congestion_level.html', context)
