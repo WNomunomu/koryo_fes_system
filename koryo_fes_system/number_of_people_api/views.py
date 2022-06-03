@@ -26,3 +26,13 @@ class NumberOfPeopleApiView(View):
         json_data = json.dumps(number_of_people_dict)
 
         return HttpResponse(json_data, content_type="application/json")
+
+class CopyCheckDataApi(View):
+    def get(self, request, user_num):
+        user_num = int(user_num)
+
+        copy_check_num = RoomAccessData.objects.filter(room_name='koryo-fes', user_num=user_num).all().aggregate(Sum('entered_or_left')).get('entered_or_left__sum')
+
+        json_data = json.dumps({"copy_check_num": copy_check_num})
+
+        return HttpResponse(json_data, content_type="application/json")

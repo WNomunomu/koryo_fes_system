@@ -3,5 +3,5 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('', views.NumberOfPeopleApiView.as_view(), name='api'),
+    path('copy_check/<slug:user_num>', views.CopyCheckDataApi.as_view(), name='api'),
 ]

@@ -164,3 +164,5 @@ LOGIN_URL = "account:login"
 LOGIN_REDIRECT_URL = "room_access_system:home"
 LOGOUT_REDIREST_URL = "account:login"
 ACCOUNT_LOGOUT_REDIRECT_URL = "account:login"
+
+X_FRAME_OPTIONS = 'ALLOW'

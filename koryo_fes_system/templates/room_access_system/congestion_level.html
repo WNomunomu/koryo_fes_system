@@ -1,7 +1,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>混雑状況ページ</title>
 <style type="text/css">
+    body {
+        font-family: Inter, 'Noto Sans JP', 'sans-serif';
+    }
+
+    table {
+        width: 0px;
+    }
+
     thead {
         visibility: hidden;
+    }
+
+    #koryo-fes {
+        visibility: hidden;
+    }
+
+    .ritz .waffle .s0 {
+        font-size: 25px;
     }
 
     .row-headers-background {
@@ -12,6 +29,129 @@
         visibility: hidden;
     }
 
+    .ritz .waffle a {
+        color: inherit;
+    }
+
+    .ritz .waffle .s1 {
+        border-bottom: 1px SOLID #000000;
+        background-color: #ffffff;
+    }
+
+    .ritz .waffle .s4 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: left;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: bottom;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s5 {
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+    }
+
+    .ritz .waffle .s6 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s9 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 9pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s8 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 7pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s2 {
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: left;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: bottom;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s0 {
+        background-color: #ffffff;
+        text-align: left;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: bottom;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s3 {
+        border-bottom: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: left;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 10pt;
+        vertical-align: bottom;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+
+    .ritz .waffle .s7 {
+        border-bottom: 1px SOLID #000000;
+        border-right: 1px SOLID #000000;
+        background-color: #ffffff;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 6pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 2px 3px 2px 3px;
+    }
+</style>
+<style type="text/css">
     .ritz .waffle a {
         color: inherit;
     }
@@ -384,10 +524,8 @@
                 <td class="s2"></td>
                 <td id="obara" class="s6" dir="ltr" colspan="5" rowspan="2">小原玲さん<br>写真展</td>
                 <td class="s2"></td>
-                <td class="s0"></td>
-                <td class="s0"></td>
-                <td class="s0"></td>
-                <td class="s0"></td>
+                <td class="s2"></td>
+                <td id="rest-area" class="s6" dir="ltr" colspan="3" rowspan="2">休憩所</td>
                 <td class="s0"></td>
                 <td class="s0"></td>
                 <td></td>
@@ -408,10 +546,7 @@
                 <td class="s2"></td>
                 <td class="s2"></td>
                 <td class="s2"></td>
-                <td class="s0"></td>
-                <td class="s0"></td>
-                <td class="s0"></td>
-                <td class="s0"></td>
+                <td class="s2"></td>
                 <td class="s0"></td>
                 <td class="s0"></td>
                 <td></td>
@@ -1324,7 +1459,7 @@
                     <div class="row-header-wrapper" style="line-height: 20px">43</div>
                 </th>
                 <td class="s5"></td>
-                <td id="debate" class="s9" dir="ltr" colspan="2" rowspan="2">ディベ<br>ート部</td>
+                <td class="s9" dir="ltr" colspan="2" rowspan="2"></td>
                 <td id="3-7" class="s6" dir="ltr" colspan="2" rowspan="2">3-7</td>
                 <td id="3-6" class="s6" dir="ltr" colspan="2" rowspan="2">3-6</td>
                 <td class="s2"></td>
@@ -1517,9 +1652,119 @@
                 <td></td>
                 <td></td>
             </tr>
+            <tr style="height: 20px">
+                <th id="410538746R53" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">54</div>
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R54" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">55</div>
+                </th>
+                <td></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td class="s1"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R55" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">56</div>
+                </th>
+                <td class="s5"></td>
+                <td id="kyudou" class="s6" dir="ltr" colspan="4" rowspan="2">弓道場</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px">
+                <th id="410538746R56" style="height: 20px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 20px">57</div>
+                </th>
+                <td class="s5"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
 </div>
+<div id="koryo-fes"></div>
 <script>
     const dataDict = {};
     
@@ -1532,6 +1777,8 @@
     console.log(dataDict);
 
     for (let key in dataDict) {
+
+        console.log(key);
         
         if (key === 'koryo-3f') {
             dataDict[key] = dataDict[key] / 60;
@@ -1560,16 +1807,16 @@
         console.log(room_name);
         console.log(dataDict[room_name]);
 
-        if (0 <= dataDict[room_name] && dataDict[room_name] < 0.33) {
-            element.style.backgroundColor = '#66FFFF';
+        if (dataDict[room_name] < 0.33) {
+            element.style.backgroundColor = '#61e821';
         }  
     
         else if (0.33 <= dataDict[room_name] && dataDict[room_name] < 0.66) {
-            element.style.backgroundColor = '#C3FB0D';
+            element.style.backgroundColor = '#1092d9';
         }
         
         else if (0.66 <= dataDict[room_name]) {
-            element.style.backgroundColor = '#F92C2C';
+            element.style.backgroundColor = '#e60012';
         }
     };
     

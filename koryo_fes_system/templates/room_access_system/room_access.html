@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1-1enter</title>
+    <title>入場管理システム</title>
     <link rel="stylesheet" href="{% static 'room_access_system/css/room_access_style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -13,7 +13,9 @@
 </head>
 
 <body style="max-width: 640px;margin: 0 auto;">
-
+    <div id='page-name-container'>
+        <h1 id="page-name"></h1>
+    </div>
     <div id="output">
       <h1 id="outputMessage"></h1>
     </div>
@@ -29,11 +31,12 @@
 				<button type="submit" class="btn btn-primary mt-4">送信</button>
             </div>
         </form>
-		<input type="checkbox" name="quick" id="quick"></input>
+        <label><input id="camera-checkbox" type="checkbox" onclick="cameraChange()">カメラを切り替える</label>
     </div>
 
     <p>このページの音声はOtoLogicの音声を使用しています。</p>
     <script>
+        "use strict";
         // システムのユーザーがページから離れようとしたときの処理
         window.onbeforeunload = function(e) {
             return "ブラウザを閉じても良いでしょうか？";
@@ -81,54 +84,55 @@
 
             console.log(user_num_value);
 
-            const numList = String(user_num_value).split(''); // 各桁の数値を取り出したリストを作成
+            $.ajax({
+                'url': "{% url 'room_access_system:ajax_post' %}",
+                'type': 'POST',
+                'data': {
+                    'room_name': room_name_value,
+                    'user_num': user_num_value,
+                    'entered_or_left': entered_or_left_value,
+                },
+                'dataType': 'json',
+            }).done(function(response){
+                var response = response;
+                console.log(response);
+            });
 
-            console.log(numList);
-
-            const a = Number(numList[2]);
-            const b = Number(numList[3]);
-            const c = Number(numList[4]);
-            const d = Number(numList[5]);
-
-            const x = Number(numList[6]);
-
-            const checkNum = (a*1 + b*3 + c*1 + d*3) % 10;
-
-            if (checkNum === x) {
-                console.log('正規のチケットです。');
-                entranceMusic.play();
-
-                $.ajax({
-                    'url': "{% url 'room_access_system:ajax_post' %}",
-                    'type': 'POST',
-                    'data': {
-                        'room_name': room_name_value,
-                        'user_num': user_num_value,
-                        'entered_or_left': entered_or_left_value,
-                    },
-                    'dataType': 'json',
-                })
-                $('#id_user_num').val(0);
-                
-            } 
-            
-            else if (user_num_value === null || user_num_value === '') {
-                $('#id_user_num').val(0);
-            } // QRコード以外のものが読み込まれてしまった時の条件分岐
-            
-            else {
-                console.log('偽装の疑いあり。');
-                errorMusic.play();
-                $('#id_user_num').val(0);
-            }
+            $('#id_user_num').val(0);
 		}
 
 
-        $('#post-form').on('submit', function(e) {
-			e.preventDefault();
-            
+        // 入場する部とチケットがあっているかの確認、チケットの偽装の確認
+        function validation() {
             const entranceMusic = new Audio("{% static 'room_access_system/sound/entrance.mp3' %}");
             const errorMusic = new Audio("{% static 'room_access_system/sound/error.mp3' %}");
+
+
+            const dateData = new Date();
+            const date = dateData.getDate();
+            const time = dateData.getHours();
+
+            console.log(date);
+            console.log(time);     
+            
+            let termCheckNum;
+
+            // 入場する部とチケットがあっているかの確認
+            if (date === 3 && time < 13) {
+                termCheckNum = 1;
+            }
+            else if (date === 4 && time >= 13) {
+                termCheckNum = 2;
+            }
+            else if (date === 5 && time < 13) {
+                termCheckNum = 3;
+            }
+            else if (date === 5 && time >= 13) {
+                termCheckNum = 4;
+            }
+
+            console.log(termCheckNum);
+
 
             var user_num_value = $('#id_user_num').val();
 
@@ -138,6 +142,8 @@
 
             console.log(numList);
 
+            const termNum = Number(numList[1]);
+
             const a = Number(numList[2]);
             const b = Number(numList[3]);
             const c = Number(numList[4]);
@@ -147,18 +153,85 @@
 
             const checkNum = (a*1 + b*3 + c*1 + d*3) % 10;
 
-            if (checkNum === x) {
+            if (checkNum === x && termCheckNum === termNum) {
                 console.log('正規のチケットです。');
                 entranceMusic.play();
                 send();
-                
-            } else {
+            }
+
+            else if (user_num_value === null || user_num_value === '') {
+                $('#id_user_num').val(0);
+            }
+
+            else {
                 console.log('偽装の疑いあり。');
                 errorMusic.play();
             }
+        }
+
+
+        $('#post-form').on('submit', function(e) {
+			e.preventDefault();
             
+            validation();
 		});
 
+        // どのページになのかの表示
+        var room_name_value = $('#id_room_name').val();
+        var entered_or_left_value = $('#id_entered_or_left').val();
+
+        switch (room_name_value) {
+            case 'koryo-fes':
+                room_name_value = '会場全体入口(正門)';
+                break;
+            case 'obara':
+                room_name_value = '小原玲さん写真展';
+                break;
+            case 'kuizukenkyuu':
+                room_name_value = 'クイズ研究同好会';
+                break;
+            case 'chireki-syashin-bungei':
+                room_name_value = '地歴部、写真部、文芸部';
+                break;
+            case 'bijutsu-shodou':
+                room_name_value = '美術部、書道部';
+                break;
+            case 'tetsudou':
+                room_name_value = '鉄道研究部';
+                break;
+            case 'science':
+                room_name_value = '科学・物理部';
+                break;
+            case 'koryo-3f':
+                room_name_value = '将棋部、茶道部、囲碁部、百人一首部';
+                break;
+            case 'kyudou':
+                room_name_value = '弓道部';
+                break;
+            case 'taiikukan':
+                room_name_value = '体育館';
+                break;
+            case 'kinenkan':
+                room_name_value = '記念館';
+                break;
+            case 'live':
+                room_name_value = 'ライブ会場';
+                break;
+            case 'rest-area':
+                room_name_value = '休憩所'
+                break;                
+        }
+
+        if (entered_or_left_value === "1") {
+            var entered_or_left_text = '入場';
+        } 
+        else {
+            var entered_or_left_text = '退場'
+        }
+
+        document.getElementById("page-name").innerText = room_name_value + '/' + entered_or_left_text;
+
+        
 
         // qrコードの処理
         var video = document.createElement("video");
@@ -174,7 +247,22 @@
 	        canvas.stroke();
         }
 
-        navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
+        let cameraMode;// カメラを切り替えるための値
+
+        function cameraChange(){
+            const checkBox = document.getElementById('camera-checkbox');
+            
+            if (checkBox.checked == true) {
+                cameraMode = 'user';
+            }
+            else {
+                cameraMode = 'environment';
+            }
+            
+            console.log(cameraMode);
+        }
+
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: cameraMode } }).then(function(stream) {
 	        video.srcObject = stream;
 	        video.setAttribute("playsinline", true);
 	        video.play();
@@ -208,7 +296,7 @@
                     $('#id_user_num').val(code.data);
 
 					if ((code.data != prev_data) && quick_flag) {
-						send()
+						validation();
 					}
 
 					prev_data = code.data

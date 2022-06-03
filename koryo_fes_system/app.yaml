@@ -1,7 +1,21 @@
 runtime: python39
+env: standard
 
 # This is imports the WSGI-compatible object of your Django app
 entrypoint: gunicorn -b :$PORT koryo_fes_system.wsgi
+
+instance_class: F2
+
+automatic_scaling:
+  target_cpu_utilization: 0.6 # default value
+  target_throughput_utilization: 0.6 # default value
+  max_instances: 5
+  min_instances: 1
+  max_idle_instances: 1  # default value
+  min_idle_instances: 1
+  min_pending_latency: 30ms  # default value
+  max_pending_latency: automatic
+  max_concurrent_requests: 80
 
 includes:
 - secret.yaml
