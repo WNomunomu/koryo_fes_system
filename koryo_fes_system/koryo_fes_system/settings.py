@@ -97,18 +97,6 @@ if os.getenv('GAE_APPLICATION', None):
         }
     }
 
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/koryo-fes-system-test:us-central1:koryo-fes-system-database',
-            'USER': 'WNomunomu',
-            'PASSWORD': '',
-            'NAME': 'koryo-fes-system-test-db',
-            'PORT': '13306',
-        }
-    }
-
     # DATABASES = {
     #     'default': {
     #         'ENGINE': 'django.db.backends.sqlite3',
